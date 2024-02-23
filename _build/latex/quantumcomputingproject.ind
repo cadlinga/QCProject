@@ -1,0 +1,49 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter A
+  \item \spxentry{arg1}\spxextra{example.Example attribute}, \hyperpage{1}
+
+  \indexspace
+  \bigletter E
+  \item \spxentry{example}
+    \subitem \spxentry{module}, \hyperpage{1}
+  \item \spxentry{Example}\spxextra{class in example}, \hyperpage{1}
+  \item \spxentry{Example2}\spxextra{class in example}, \hyperpage{2}
+
+  \indexspace
+  \bigletter G
+  \item \spxentry{Gate}\spxextra{class in gates}, \hyperpage{3}
+  \item \spxentry{gates}
+    \subitem \spxentry{module}, \hyperpage{2}
+
+  \indexspace
+  \bigletter H
+  \item \spxentry{H}\spxextra{class in gates}, \hyperpage{3}
+
+  \indexspace
+  \bigletter M
+  \item \spxentry{module}
+    \subitem \spxentry{example}, \hyperpage{1}
+    \subitem \spxentry{gates}, \hyperpage{2}
+    \subitem \spxentry{tests.test\_tensor}, \hyperpage{3}
+
+  \indexspace
+  \bigletter T
+  \item \spxentry{test\_operator\_tensor\_product\_vs\_notes()}\spxextra{tests.test\_tensor.TestOperator method}, 
+		\hyperpage{5}
+  \item \spxentry{test\_vector\_construction()}\spxextra{tests.test\_tensor.TestVector method}, 
+		\hyperpage{5}
+  \item \spxentry{TestOperator}\spxextra{class in tests.test\_tensor}, \hyperpage{5}
+  \item \spxentry{tests.test\_tensor}
+    \subitem \spxentry{module}, \hyperpage{3}
+  \item \spxentry{TestVector}\spxextra{class in tests.test\_tensor}, \hyperpage{5}
+
+  \indexspace
+  \bigletter U
+  \item \spxentry{usefulMethod()}\spxextra{example.Example method}, \hyperpage{1}
+
+\end{sphinxtheindex}

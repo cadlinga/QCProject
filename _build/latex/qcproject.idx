@@ -1,0 +1,9 @@
+\indexentry{module@\spxentry{module}!gates@\spxentry{gates}|hyperpage}{1}
+\indexentry{gates@\spxentry{gates}!module@\spxentry{module}|hyperpage}{1}
+\indexentry{Gate (class in gates)@\spxentry{Gate}\spxextra{class in gates}|hyperpage}{1}
+\indexentry{H (class in gates)@\spxentry{H}\spxextra{class in gates}|hyperpage}{1}
+\indexentry{module@\spxentry{module}!tests.test\_tensor@\spxentry{tests.test\_tensor}|hyperpage}{1}
+\indexentry{tests.test\_tensor@\spxentry{tests.test\_tensor}!module@\spxentry{module}|hyperpage}{1}
+\indexentry{TestOperator (class in tests.test\_tensor)@\spxentry{TestOperator}\spxextra{class in tests.test\_tensor}|hyperpage}{3}
+\indexentry{TestVector (class in tests.test\_tensor)@\spxentry{TestVector}\spxextra{class in tests.test\_tensor}|hyperpage}{3}
+\indexentry{test\_vector\_construction() (tests.test\_tensor.TestVector method)@\spxentry{test\_vector\_construction()}\spxextra{tests.test\_tensor.TestVector method}|hyperpage}{3}

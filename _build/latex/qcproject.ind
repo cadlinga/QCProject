@@ -1,0 +1,31 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter G
+  \item \spxentry{Gate}\spxextra{class in gates}, \hyperpage{1}
+  \item \spxentry{gates}
+    \subitem \spxentry{module}, \hyperpage{1}
+
+  \indexspace
+  \bigletter H
+  \item \spxentry{H}\spxextra{class in gates}, \hyperpage{1}
+
+  \indexspace
+  \bigletter M
+  \item \spxentry{module}
+    \subitem \spxentry{gates}, \hyperpage{1}
+    \subitem \spxentry{tests.test\_tensor}, \hyperpage{1}
+
+  \indexspace
+  \bigletter T
+  \item \spxentry{test\_vector\_construction()}\spxextra{tests.test\_tensor.TestVector method}, 
+		\hyperpage{3}
+  \item \spxentry{TestOperator}\spxextra{class in tests.test\_tensor}, \hyperpage{3}
+  \item \spxentry{tests.test\_tensor}
+    \subitem \spxentry{module}, \hyperpage{1}
+  \item \spxentry{TestVector}\spxextra{class in tests.test\_tensor}, \hyperpage{3}
+
+\end{sphinxtheindex}

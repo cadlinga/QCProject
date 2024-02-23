@@ -1,0 +1,16 @@
+\indexentry{module@\spxentry{module}!example@\spxentry{example}|hyperpage}{1}
+\indexentry{example@\spxentry{example}!module@\spxentry{module}|hyperpage}{1}
+\indexentry{Example (class in example)@\spxentry{Example}\spxextra{class in example}|hyperpage}{1}
+\indexentry{arg1 (example.Example attribute)@\spxentry{arg1}\spxextra{example.Example attribute}|hyperpage}{1}
+\indexentry{usefulMethod() (example.Example method)@\spxentry{usefulMethod()}\spxextra{example.Example method}|hyperpage}{1}
+\indexentry{Example2 (class in example)@\spxentry{Example2}\spxextra{class in example}|hyperpage}{2}
+\indexentry{module@\spxentry{module}!gates@\spxentry{gates}|hyperpage}{2}
+\indexentry{gates@\spxentry{gates}!module@\spxentry{module}|hyperpage}{2}
+\indexentry{Gate (class in gates)@\spxentry{Gate}\spxextra{class in gates}|hyperpage}{3}
+\indexentry{H (class in gates)@\spxentry{H}\spxextra{class in gates}|hyperpage}{3}
+\indexentry{module@\spxentry{module}!tests.test\_tensor@\spxentry{tests.test\_tensor}|hyperpage}{3}
+\indexentry{tests.test\_tensor@\spxentry{tests.test\_tensor}!module@\spxentry{module}|hyperpage}{3}
+\indexentry{TestOperator (class in tests.test\_tensor)@\spxentry{TestOperator}\spxextra{class in tests.test\_tensor}|hyperpage}{5}
+\indexentry{test\_operator\_tensor\_product\_vs\_notes() (tests.test\_tensor.TestOperator method)@\spxentry{test\_operator\_tensor\_product\_vs\_notes()}\spxextra{tests.test\_tensor.TestOperator method}|hyperpage}{5}
+\indexentry{TestVector (class in tests.test\_tensor)@\spxentry{TestVector}\spxextra{class in tests.test\_tensor}|hyperpage}{5}
+\indexentry{test\_vector\_construction() (tests.test\_tensor.TestVector method)@\spxentry{test\_vector\_construction()}\spxextra{tests.test\_tensor.TestVector method}|hyperpage}{5}

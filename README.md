@@ -3,9 +3,6 @@ This is the repository for our group for the Quantum Computing Project. This is 
 
 This repo is initially public, I will soon make it private so if you do not already have a GitHub account please create one so I can add you. To anyone who wishes to connect their machine to the repo (coders primarily) we will need to generate SSH keys, which we can do one-to-one as required. 
 
-# Team 
-A short biography of each team member will be written into the team directory. Please complete this as soon as possible. 
-
 ## Roles 
 Initially I (Conner) will handle task management. There will be a "department lead" for science, coding and writing. The "heads" are highlighted in bold below. 
 This can be changed however you like but a head should be nominated. The head of department will be responsible for communicating the progress and problems being experienced by that team in any meeting. 
