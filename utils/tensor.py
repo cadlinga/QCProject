@@ -61,7 +61,6 @@ class Operator:
 
     def update(self, row, column, value):
         matrix = self.matrix.todense()
-        print(matrix)
         matrix[row][column] = value
         self.matrix = coo_array(matrix)
         return self
