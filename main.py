@@ -1,13 +1,5 @@
-"""The dotenv import allows us to specify environment variables
-which are kept in the .env file in the root directory"""
-
-from dotenv import load_dotenv
 import argparse
-from gates import Gate
 from qc import Circuit
-
-from utils.state_vector import makeStateVector
-
 
 parser = argparse.ArgumentParser(description="Quantum Computer Simulator")
 
@@ -21,10 +13,7 @@ parser.add_argument(
     help="The state you want Grovers algorithm to find, zero based indexing",
 )
 
-
 args = vars(parser.parse_args())
-
-# load_dotenv()
 
 register_size = args["Register Size"]
 target = args["Target State"]
@@ -44,7 +33,6 @@ print(
     + " states (haystack)"
 )
 
-# print("Classically, you could expect this to take")
 
 # Create circuit and register of correct size
 circuit = Circuit(register_size)
