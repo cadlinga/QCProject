@@ -22,7 +22,7 @@
 
   \indexspace
   \bigletter H
-  \item \spxentry{H}\spxextra{class in gates}, \hyperpage{3}
+  \item \spxentry{h()}\spxextra{gates.Gate method}, \hyperpage{3}
 
   \indexspace
   \bigletter M

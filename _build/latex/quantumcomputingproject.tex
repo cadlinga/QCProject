@@ -64,7 +64,7 @@
 
 
 \title{Quantum Computing Project}
-\date{Feb 23, 2024}
+\date{Mar 11, 2024}
 \release{0.01}
 \author{
 Conner Adlington, Julia Bauer, etc.\@{} 
@@ -223,8 +223,8 @@ This is the second class
 \label{\detokenize{index:gates-module}}\label{\detokenize{index:module-gates}}
 \begin{sphinxadmonition}{note}{Note:}
 \sphinxAtStartPar
-This code is still under development and until the version 
-is incremented to a 1.* you should not trust any of this 
+This code is still under development and until the version
+is incremented to a 1.* you should not trust any of this
 documentation.
 \end{sphinxadmonition}
 \index{Gate (class in gates)@\spxentry{Gate}\spxextra{class in gates}}
@@ -232,32 +232,33 @@ documentation.
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{index:gates.Gate}}
 \pysigstartsignatures
-\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class\DUrole{w}{ }}}\sphinxcode{\sphinxupquote{gates.}}\sphinxbfcode{\sphinxupquote{Gate}}}{\sphinxparam{\DUrole{n}{matrix}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{ndarray}}}{}
+\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{class\DUrole{w}{ }}}\sphinxcode{\sphinxupquote{gates.}}\sphinxbfcode{\sphinxupquote{Gate}}}{\sphinxparam{\DUrole{n}{dimension}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{int}}}{}
 \pysigstopsignatures
 \sphinxAtStartPar
-This is the gate object which we will document properly now.
+This is the gate class which contains the gates we need to implement
+Grover’s algorithm.
 
-\begin{sphinxadmonition}{note}{Note:}
 \sphinxAtStartPar
-This class should not be called directly. It is a super
-class for the gates below.
-\end{sphinxadmonition}
+When we initialise, we declare the dimension of the quantum
+register so that the gates (except the Hadamard) can be provided in
+the correct dimension.
 
-\end{fulllineitems}
-
-\index{H (class in gates)@\spxentry{H}\spxextra{class in gates}}
+\sphinxAtStartPar
+The Hadamard gate is scaled (using tensor products) at the point
+of implementation to make the application more obvious.
+\index{h() (gates.Gate method)@\spxentry{h()}\spxextra{gates.Gate method}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{index:gates.H}}
+\phantomsection\label{\detokenize{index:gates.Gate.h}}
 \pysigstartsignatures
-\pysigline{\sphinxbfcode{\sphinxupquote{class\DUrole{w}{ }}}\sphinxcode{\sphinxupquote{gates.}}\sphinxbfcode{\sphinxupquote{H}}}
+\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{h}}}{}{}
 \pysigstopsignatures
 \sphinxAtStartPar
 Single\sphinxhyphen{}qubit Hadamard gate.
 
 \sphinxAtStartPar
-This gate is a \(\pi\) rotation about the X+Z axis, and has the effect of
-changing computation basis from \(|0\rangle,|1\rangle\) to
+This gate is a \(\pi\) rotation about the X+Z axis, and has the effect
+of changing computation basis from \(|0\rangle,|1\rangle\) to
 \(|+\rangle,|-\rangle\) and vice\sphinxhyphen{}versa.
 
 \sphinxAtStartPar
@@ -269,6 +270,9 @@ changing computation basis from \(|0\rangle,|1\rangle\) to
         1 & -1
     \end{pmatrix}\end{split}
 \end{equation*}
+\end{fulllineitems}
+
+
 \end{fulllineitems}
 
 \index{module@\spxentry{module}!tests.test\_tensor@\spxentry{tests.test\_tensor}}\index{tests.test\_tensor@\spxentry{tests.test\_tensor}!module@\spxentry{module}}

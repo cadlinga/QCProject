@@ -7,7 +7,7 @@
 \indexentry{module@\spxentry{module}!gates@\spxentry{gates}|hyperpage}{2}
 \indexentry{gates@\spxentry{gates}!module@\spxentry{module}|hyperpage}{2}
 \indexentry{Gate (class in gates)@\spxentry{Gate}\spxextra{class in gates}|hyperpage}{3}
-\indexentry{H (class in gates)@\spxentry{H}\spxextra{class in gates}|hyperpage}{3}
+\indexentry{h() (gates.Gate method)@\spxentry{h()}\spxextra{gates.Gate method}|hyperpage}{3}
 \indexentry{module@\spxentry{module}!tests.test\_tensor@\spxentry{tests.test\_tensor}|hyperpage}{3}
 \indexentry{tests.test\_tensor@\spxentry{tests.test\_tensor}!module@\spxentry{module}|hyperpage}{3}
 \indexentry{TestOperator (class in tests.test\_tensor)@\spxentry{TestOperator}\spxextra{class in tests.test\_tensor}|hyperpage}{5}

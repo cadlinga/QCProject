@@ -122,6 +122,7 @@ class Circuit:
     def measure(self, target: int):
         target = int(target)
 
+        print("I think I've found it!")
         print(
             "P("
             + str(target)
