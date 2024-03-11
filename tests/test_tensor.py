@@ -2,7 +2,6 @@ r"""
 Tensor Module Test Suite
 ##############################
 
-
 This module tests the classes included in the tensor module.
 """
 
@@ -76,11 +75,11 @@ class TestOperator(unittest.TestCase):
         )
 
     def test_operator_tensor_product_vs_notes(self):
-        r"""Tensor Product of Hadamard, Identity and Hadamard, as presented in 
-        the slides - :math:`H \otimes \mathbb{I} \otimes H`. 
+        r"""Tensor Product of Hadamard, Identity and Hadamard, as presented in
+        the slides - :math:`H \otimes \mathbb{I} \otimes H`.
 
-        This manually creates the hadamard gates and performs the tensor product 
-        using the :meth:`~Vector.tensor()` method. 
+        This manually creates the hadamard gates and performs the tensor
+        product using the :meth:`~Vector.tensor()` method.
 
         The result is compared against the result in the slides:
 

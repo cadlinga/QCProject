@@ -1,9 +1,59 @@
-# import os
-
 """The dotenv import allows us to specify environment variables
 which are kept in the .env file in the root directory"""
 
 from dotenv import load_dotenv
+import argparse
+from gates import Gate
+from qc import Circuit
+
+from utils.state_vector import makeStateVector
 
 
-load_dotenv()
+parser = argparse.ArgumentParser(description="Quantum Computer Simulator")
+
+parser.add_argument(
+    "Register Size",
+    help="Please enter an integer for the size of the register",
+)
+
+parser.add_argument(
+    "Target State",
+    help="The state you want Grovers algorithm to find, zero based indexing",
+)
+
+
+args = vars(parser.parse_args())
+
+# load_dotenv()
+
+register_size = args["Register Size"]
+target = args["Target State"]
+
+print("Register Size: " + register_size)
+print("Target State: " + target)
+
+print(
+    "I'm looking for the "
+    + str(target)
+    + " state (needle) state in the "
+    + str((2 ** int(register_size)))
+    + " possible "
+    + "[0 - "
+    + str((2 ** int(register_size)) - 1)
+    + "]"
+    + " states (haystack)"
+)
+
+# print("Classically, you could expect this to take")
+
+# Create circuit and register of correct size
+circuit = Circuit(register_size)
+
+# Apply the hadamard to all states initially
+circuit.h()
+
+# Loop over the grover cycle (oracle -> h -> refelct -> h)
+# number of times specified
+circuit.grover(target)
+
+circuit.measure(target)
