@@ -36,6 +36,9 @@ class Gate(object):
     def reflection(self):
         return (Operator(2, [1, 0, 0, 1]) ** self.dimension).negate().update(0, 0, 1)
 
+    def i(self):
+        return Operator(2, [1, 0, 0, 1]) ** self.dimension
+
 
 #
 # class H(Gate):

@@ -129,9 +129,10 @@ class Circuit:
             + str(
                 (
                     numpy.dot(
-                        makeStateVector(
-                            target, self.register_size).vector.flatten(),
-                        self.register.vector.flatten(),
+                        makeStateVector(target, self.register_size)
+                        .vector.todense()
+                        .flatten(),
+                        self.register.vector.todense().flatten(),
                     )
                 )
                 ** 2

@@ -1,31 +1,40 @@
 from typing import Union
 import numpy
-from numpy._typing import _ArrayLikeUnknown
-
 from utils.gate import squareMatrix
+import scipy
+from scipy.sparse import coo_array
 
-### IGNORE THIS TEXT: GIT DESKTOP TEST - KEVIN ###
+
 class Operator:
-    def __init__(self, size: int, elements: list):
-        self.matrix = squareMatrix(size, elements)
+    def __init__(self, size: int, elements: Union[list, coo_array]):
+        if isinstance(elements, list):
+            self.matrix = scipy.sparse.coo_array(squareMatrix(size, elements))
+        # if is instance(elements, coo_array):
+        else:
+            self.matrix = elements
         self.size = size
 
     def tensor(self, target):
-        product = []
 
-        for rows in self.matrix:
-            row = 0
-            while row < self.matrix.ndim:
-                for entry in rows:
-                    column = 0
-                    while column < self.matrix.ndim:
-                        product.append(entry * target.matrix[row, column])
-                        column += 1
-                row += 1
-        return Operator(self.size * target.size, product)
+        try:
+            product = scipy.sparse.kron(self.matrix, target.matrix)
+
+            return Operator(self.size * target.size, product)
+        except:
+            product = []
+            for rows in self.matrix:
+                row = 0
+                while row < self.matrix.ndim:
+                    for entry in rows:
+                        column = 0
+                        while column < self.matrix.ndim:
+                            product.append(entry * target.matrix[row, column])
+                            column += 1
+                    row += 1
+            return Operator(self.size * target.size, product)
 
     def __str__(self):
-        return self.matrix.__str__()
+        return self.matrix.todense().__str__()
 
     def __add__(self, target):
         sum = self.matrix + target.matrix
@@ -51,20 +60,34 @@ class Operator:
         return product
 
     def update(self, row, column, value):
-        self.matrix[row][column] = value
+        matrix = self.matrix.todense()
+        print(matrix)
+        matrix[row][column] = value
+        self.matrix = coo_array(matrix)
         return self
 
     def __mul__(self, other):
-        self.matrix = numpy.matmul(other.matrix, self.matrix)
+        self.matrix = self.matrix.dot(other.matrix)
+        # self.matrix = numpy.matmul(other.matrix, self.matrix)
         return self
 
     def negate(self):
         self.matrix = -1 * self.matrix
         return self
 
+    def equal(self, target):
+        return numpy.allclose(self.matrix.todense(), target.matrix.todense())
+
+    def scale(self, value: float):
+        self.matrix = value * self.matrix
+        return self
+
 
 class Vector:
-    def __init__(self, elements: Union[list[int], int]):
+    def __init__(self, elements: Union[list[int], int, coo_array]):
+        # if isinstance(elements, coo_array):
+        #     self.vector = elements
+        #     self.vector = elements.shape[0]
         if isinstance(elements, int):
             while elements not in [0, 1]:
                 raise Exception(
@@ -74,20 +97,35 @@ class Vector:
                     """
                 )
             if elements == 0:
-                elements = [1, 0]
+                elements = coo_array([1, 0])
+            elif elements == 1:
+                elements = coo_array([0, 1])
 
-            if elements == 1:
-                elements = [0, 1]
-
-        self.vector = numpy.resize(elements, [len(elements), 1])
-        self.dimension = self.vector.size
+        if isinstance(elements, list):
+            self.vector = coo_array(numpy.resize(elements, [len(elements), 1]))
+            self.dimension = self.vector.get_shape()[0]
+            return
+        else:
+            self.length = elements.size
+            size = elements.get_shape()[0] * elements.get_shape()[1]
+            # print(elements.get_shape())
+            self.vector = elements.reshape(size, 1)
+            self.dimension = self.vector.get_shape()[0]
 
     def tensor(self, target):
-        product = []
-        for i in self.vector:
-            for j in target.vector:
-                product.append(i * j)
-        return Vector(product)
+        try:
+            # print(self.vector)
+            # print(target.vector)
+            product = scipy.sparse.kron(self.vector, target.vector)
+
+            return Vector(product)
+        except:
+
+            product = []
+            for i in self.vector:
+                for j in target.vector:
+                    product.append(i * j)
+            return Vector(product)
 
     def outer(self, target):
         outer = numpy.outer(self.vector.transpose(), target.vector)
@@ -100,7 +138,6 @@ class Vector:
         return Vector(numpy.subtract(self.vector, other.vector))
 
     def __mul__(self, other):
-        # Scalar multiplication only at the moment.
         return Vector((self.vector * other))
 
     __rmul__ = __mul__
@@ -118,11 +155,15 @@ class Vector:
         return self.vector.__rep__()
 
     def __str__(self):
-        return self.vector.__str__()
+        return self.vector.todense().__str__()
 
     def apply(self, operator: Operator):
-        product = numpy.matmul(operator.matrix, self.vector)
-        return Vector(product.flatten().tolist())
+        # product = numpy.matmul(operator.matrix, self.vector)
+        product = operator.matrix.dot(coo_array(self.vector))
+        return Vector(product)
+
+    def equal(self, target):
+        return numpy.allclose(self.vector.todense(), target.vector.todense())
 
 
 #

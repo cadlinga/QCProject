@@ -1,11 +1,5 @@
 import unittest
 
-from numpy import who
-
-from utils.gate import squareMatrix
-from utils.state_vector import makeStateVector
-from utils.tensor import Operator
-
 list = [
     15,
     47,
