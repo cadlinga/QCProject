@@ -1,3 +1,10 @@
+r"""
+Quantum Circuit Module
+======================
+This module provides the implementation of a quantum circuit simulator.
+It defines the `Circuit` class which represents a quantum circuit and
+provides methods for applying quantum gates and running Grover's algorithm.
+"""
 from typing import Union
 
 import numpy
@@ -76,8 +83,19 @@ import matplotlib as plt
 #
 #
 class Circuit:
+    r"""
+    This is the quantum circuit class which represents a quantum circuit with a 
+    specified register size. It provides methods for applying quantum gates, 
+    running Grover's algorithm, and measuring the result.
+    """
 
     def __init__(self, register_size: int):
+        r"""
+        Initializes a new quantum circuit with the given register size.
+
+        Params:
+            register_size (int): The number of qubits in the quantum register.
+        """
         self.register_size = int(register_size)
         self.register = makeStateVector(0, register_size)
         self.groverOperator = None
@@ -89,12 +107,36 @@ class Circuit:
         return "%s(%s)" % (self.__class__.__qualname__, self.register_size)
 
     def h(self):
+        r"""
+        Applies the Hadamard gate to all qubits in the quantum register.
+
+        This method retrieves the Hadamard gate matrix from the `gates` object,
+        raises it to the power of the register size to create a tensor product,
+        and then applies the resulting operator to the quantum register.
+
+        The quantum register is updated with the new state after applying the
+        Hadamard gate.
+        """
         h = self.gates.h()
         product = h ** int(self.register_size)
         self.register = self.register.apply(product)
         return
 
     def grover(self, target: int):
+        r"""
+        Runs Grover's algorithm on the quantum circuit to find the target state.
+
+        This method calculates the number of iterations required for Grover's
+        algorithm based on the register size and the target state. It then
+        constructs the Grover operator by combining the oracle, Hadamard gates,
+        and reflection operator.
+
+        The Grover operator is applied to the quantum register for the calculated
+        number of iterations to amplify the amplitude of the target state.
+
+        Params:
+            target (int): The target state to find using Grover's algorithm.
+        """
 
         N = 2**self.register_size
         theta = numpy.arcsin(numpy.sqrt(1 / N))
@@ -120,6 +162,17 @@ class Circuit:
             i = i + 1
 
     def measure(self, target: int):
+        r"""
+        Measures the quantum circuit and prints the probability of the target state.
+
+        This method performs a measurement on the quantum circuit to determine the
+        probability of observing the target state. It calculates the inner product
+        between the target state vector and the current state vector of the quantum
+        register.
+
+        Params:
+            target (int): The target state to measure the probability for.
+        """
         target = int(target)
 
         print("I think I've found it!")

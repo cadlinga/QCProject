@@ -1,8 +1,9 @@
-"""
-#############
+r"""
 Gates Module
-#############
-
+=======================
+This module provides the implementation of quantum gates used in Grover's algorithm.
+The `Gate` class contains methods for creating the Hadamard gate, oracle gate,
+reflection gate, and identity gate.
 
 .. note::
    This code is still under development and until the version
@@ -16,7 +17,7 @@ from utils.tensor import Operator
 
 
 class Gate(object):
-    """
+    r"""
     This is the gate class which contains the gates we need to implement
     Grover's algorithm.
 
@@ -59,15 +60,80 @@ class Gate(object):
         return Operator(2, array)
 
     def oracle(self, target: int):
+        r"""
+        Oracle gate for Grover's algorithm.
+
+        The oracle gate marks the target state by flipping its phase. It is a
+        diagonal matrix with all elements on the diagonal equal to 1, except for
+        the element corresponding to the target state, which is -1.
+
+        **Matrix Representation:**
+
+        .. math::
+
+            O = 
+                \begin{pmatrix}
+                    1 & 0 \\
+                    0 & -1
+                \end{pmatrix}
+
+        Params:
+            target (int): The target state to be marked by the oracle.
+
+        Returns:
+            Operator: The oracle gate as an `Operator` object.
+
+        .. warning::
+            unsure of this gate description, maybe worth to check others as well
+        """
         target = int(target)
         return (Operator(2, [1, 0, 0, 1]) ** self.dimension).update(target, target, -1)
 
     def reflection(self):
+        r"""
+        Reflection gate for Grover's algorithm.
+
+        The reflection gate reflects the amplitudes of all states about the average
+        amplitude. It is a diagonal matrix with the first element on the diagonal
+        equal to 1 and all other elements equal to -1.
+
+        **Matrix Representation:**
+
+        .. math::
+
+            R = 
+                \begin{pmatrix}
+                    1 & 0 \\
+                    0 & -1
+                \end{pmatrix}
+
+        Returns:
+            Operator: The reflection gate as an `Operator` object
+        """
         return (Operator(2, [1, 0, 0, 1]) ** self.dimension).negate().update(0, 0, 1)
 
     def i(self):
-        return Operator(2, [1, 0, 0, 1]) ** self.dimension
+        r"""
+        Identity gate.
 
+        The identity gate performs no operation on the quantum state. It is
+        represented by the identity matrix of size determined by the dimension
+        of the quantum register.
+
+        **Matrix Representation:**
+
+        .. math::
+
+            I = 
+                \begin{pmatrix}
+                    1 & 0 \\
+                    0 & 1
+                \end{pmatrix}
+
+        Returns:
+            Operator: The identity gate as an `Operator` object.
+        """
+        return Operator(2, [1, 0, 0, 1]) ** self.dimension
 
 #
 # class H(Gate):
@@ -100,3 +166,4 @@ class Gate(object):
 #             ),
 #         ).tolist()
 #         super().__init__(matrix)
+    
