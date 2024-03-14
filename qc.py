@@ -166,6 +166,8 @@ class Circuit:
 
         Params:
             target (int): The target state to measure the probability for.
+        
+        ----
         """
         target_state = makeStateVector(int(target), self.register_size)
 

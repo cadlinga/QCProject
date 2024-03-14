@@ -2,6 +2,24 @@ from utils.tensor import Vector
 
 
 def makeStateVector(value: int, size: int = 0):
+    r"""
+    Creates a state vector based on the given integer value.
+
+    The function takes an integer `value` and an optional `size` parameter. It converts
+    the integer to its binary representation and creates a tensor product of individual
+    qubit state vectors corresponding to each binary digit.
+
+    If the `size` parameter is not provided, the size of the state vector is determined
+    by the length of the binary representation of the `value`.
+
+    Args:
+        value (int): The integer value to create the state vector from.
+        size (int): The desired size of the state vector. If not provided, the size is
+                    determined by the length of the binary representation of `value`.
+
+    Returns:
+        Vector: The state vector created as a tensor product of individual qubit state vectors.
+    """
 
     length = len(f"{value: b}")
 

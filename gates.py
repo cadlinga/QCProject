@@ -132,6 +132,8 @@ class Gate(object):
 
         Returns:
             Operator: The identity gate as an `Operator` object.
+        
+        ----
         """
         return Operator(2, [1, 0, 0, 1]) ** self.dimension
 
