@@ -2,7 +2,8 @@ from __future__ import annotations
 from typing import Union
 import numpy
 
-from utils.matrix import sparseMatrix as Matrix
+# from utils.sparseMatrix import sparseMatrix as Matrix
+from utils.denseMatrix import denseMatrix as Matrix
 
 from utils.matrixInterface import matrixInterface
 
