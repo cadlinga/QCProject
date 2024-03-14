@@ -5,16 +5,16 @@ This module provides the implementation of a quantum circuit simulator.
 It defines the `Circuit` class which represents a quantum circuit and
 provides methods for applying quantum gates and running Grover's algorithm.
 """
-from typing import Union
 
 import numpy
 from numpy.lib import math
 from gates import Gate
 
 from utils.state_vector import makeStateVector
-from utils.tensor import Operator
 
-import matplotlib as plt
+import matplotlib.pyplot as plt
+
+from utils.tensor import Operator
 
 
 #
@@ -84,8 +84,8 @@ import matplotlib as plt
 #
 class Circuit:
     r"""
-    This is the quantum circuit class which represents a quantum circuit with a 
-    specified register size. It provides methods for applying quantum gates, 
+    This is the quantum circuit class which represents a quantum circuit with a
+    specified register size. It provides methods for applying quantum gates,
     running Grover's algorithm, and measuring the result.
     """
 
@@ -97,8 +97,8 @@ class Circuit:
             register_size (int): The number of qubits in the quantum register.
         """
         self.register_size = int(register_size)
-        self.register = makeStateVector(0, register_size)
-        self.groverOperator = None
+        self.initial = makeStateVector(0, register_size)
+        self.register = self.initial
         self.gates = Gate(register_size)
 
         pass
@@ -122,7 +122,7 @@ class Circuit:
         self.register = self.register.apply(product)
         return
 
-    def grover(self, target: int):
+    def grover(self, target: int, plot=False):
         r"""
         Runs Grover's algorithm on the quantum circuit to find the target state.
 
@@ -148,18 +148,79 @@ class Circuit:
             + " iterations to be likely to succeed."
         )
 
-        if self.groverOperator is None:
-            self.groverOperator = (
-                self.gates.oracle(target)
-                * (self.gates.h() ** int(self.register_size))
-                * self.gates.reflection()
-                * (self.gates.h() ** int(self.register_size))
+        if plot:
+
+            plt.figure(figsize=(12, 12))
+            plt.title(
+                "Projection of "
+                + str(self.register_size)
+                + " qubit Quantum Register State with Initial and Oracle State Over "
+                + str(iterations)
+                + " iterations"
+            )
+            # Manually adjust these to find the best axis
+            plt.xlim((-0.005, 0.05))
+            plt.ylim((-0.1, 1))
+            plt.axis("off")
+
+            plt.quiver(
+                [1, 0, 1],
+                [0, 0, 0],
+                angles="xy",
+                scale_units="xy",
+                scale=1,
+                label="Initial State",
+                color="b",
+                alpha=0.1,
+            )
+            plt.quiver(
+                [0, 0, 0],
+                [1, 0, 1],
+                angles="xy",
+                scale_units="xy",
+                scale=1,
+                label="Oracle State",
+                color="g",
+                alpha=0.1,
             )
 
+            target_state = makeStateVector(int(target), self.register_size)
+
         i = 0
+
+        G = (
+            self.gates.oracle(target)
+            * self.gates.h() ** int(self.register_size)
+            * self.gates.reflection()
+            * self.gates.h() ** int(self.register_size)
+        )
+
         while i < int(iterations):
-            self.register = self.register.apply(self.groverOperator)
+            self.register = self.register.apply(G)
+
             i = i + 1
+
+            if plot:
+                target_projection = self.register.measure(target_state)
+                initial_projection = self.register.measure(self.initial)
+                plt.quiver(
+                    [initial_projection, 0, initial_projection],
+                    [target_projection, 0, target_projection],
+                    angles="xy",
+                    scale_units="xy",
+                    scale=1,
+                    alpha=target_projection,
+                    label="Iteration " + str(i),
+                )
+
+        if plot:
+            plt.legend()
+            plt.savefig(
+                str(self.register_size) + "qubits_" +
+                str(iterations) + "iterations",
+                dpi=400,
+            )
+            plt.show()
 
     def measure(self, target: int):
         r"""
@@ -173,23 +234,13 @@ class Circuit:
         Params:
             target (int): The target state to measure the probability for.
         """
-        target = int(target)
+        target_state = makeStateVector(int(target), self.register_size)
 
         print("I think I've found it!")
         print(
             "P("
             + str(target)
             + ") = "
-            + str(
-                (
-                    numpy.dot(
-                        makeStateVector(target, self.register_size)
-                        .vector.todense()
-                        .flatten(),
-                        self.register.vector.todense().flatten(),
-                    )
-                )
-                ** 2
-            )
+            + str((self.register.measure(target_state)) ** 2)
         )
         return

@@ -1,3 +1,6 @@
 {
     "pythonPath": "/usr/bin/python3"
+    "executionEnvironments": [
+        {"root": "src"}
+    ]
 }

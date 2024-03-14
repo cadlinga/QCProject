@@ -9,6 +9,7 @@ Grover's algorithm to find the target state, and measures the result.
 
 import argparse
 from qc import Circuit
+from utils.tensor import Operator, Vector
 
 parser = argparse.ArgumentParser(description="Quantum Computer Simulator")
 
@@ -51,6 +52,7 @@ print(
 r"""
 This creates a quantum circuit with the specified register size.
 """
+
 circuit = Circuit(register_size)
 
 r"""
@@ -62,7 +64,8 @@ r"""
 This loops over the grover cycle (oracle -> h -> reflect -> h)
 number of times specified.
 """
-circuit.grover(target)
+circuit.grover(target, True)
+
 
 r"""
 This measures the quantum circuit to retrieve the result of Grover's algorithm.

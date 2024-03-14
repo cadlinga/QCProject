@@ -1,92 +1,98 @@
+from __future__ import annotations
 from typing import Union
 import numpy
-from utils.gate import squareMatrix
+
+# from utils.gate import squareMatrix
+from utils.matrix import sparseMatrix
 import scipy
 from scipy.sparse import coo_array
 
+from utils.matrixInterface import matrixInterface
+
 
 class Operator:
-    def __init__(self, size: int, elements: Union[list, coo_array]):
-        if isinstance(elements, list):
-            self.matrix = scipy.sparse.coo_array(squareMatrix(size, elements))
-        # if is instance(elements, coo_array):
-        else:
-            self.matrix = elements
-        self.size = size
+    def __init__(self, size: int, elements: Union[list, matrixInterface]):
+        self.matrix = sparseMatrix(size, elements)
+        # self.matrix = denseMatrix(size, elements)
 
-    def tensor(self, target):
+    @property
+    def matrix(self) -> matrixInterface:
+        return self._matrix
 
-        try:
-            product = scipy.sparse.kron(self.matrix, target.matrix)
+    @matrix.setter
+    def matrix(self, matrix: matrixInterface):
+        self._matrix = matrix
+        return
 
-            return Operator(self.size * target.size, product)
-        except:
-            product = []
-            for rows in self.matrix:
-                row = 0
-                while row < self.matrix.ndim:
-                    for entry in rows:
-                        column = 0
-                        while column < self.matrix.ndim:
-                            product.append(entry * target.matrix[row, column])
-                            column += 1
-                    row += 1
-            return Operator(self.size * target.size, product)
+    def tensor(self, target: Operator):
+        matrix = self.matrix.tensor(target.matrix).matrix
+        size = self.matrix.size * target.matrix.size
+        return Operator(size, matrix)
+        self.matrix = self.matrix.tensor(target.matrix)
+        return self
 
     def __str__(self):
-        return self.matrix.todense().__str__()
+        return self.matrix.__str__()
 
-    def __add__(self, target):
-        sum = self.matrix + target.matrix
-        # print(sum)
-        # print(sum.flatten().tolist())
-
-        return Operator(self.size, sum.flatten().tolist())
+    def __add__(self, target: Operator):
+        self.matrix = self.matrix + target.matrix
+        return self
 
     def __sub__(self, target):
-        diff = self.matrix - target.matrix
-        # print(sum)
-        # print(sum.flatten().tolist())
+        self.matrix = self.matrix - target.matrix
+        return self
 
-        return Operator(self.size, diff.flatten().tolist())
-
-    def __pow__(self, n):
-        i = 1
+    def __pow__(self, n: int):
         product = self
+        i = 1
         while i < n:
             product = product.tensor(self)
             i = i + 1
-
         return product
 
+        self.matrix = self.matrix.power(n)
+        return self
+
     def update(self, row, column, value):
-        matrix = self.matrix.todense()
-        matrix[row][column] = value
-        self.matrix = coo_array(matrix)
+        self.matrix = self.matrix.update(row, column, value)
         return self
 
     def __mul__(self, other):
-        self.matrix = self.matrix.dot(other.matrix)
+        matrix = other.matrix.multiply(self.matrix).matrix
+        size = self.matrix.size
+        return Operator(size, matrix)
+
+        # self.matrix = self.matrix * other.matrix
         # self.matrix = numpy.matmul(other.matrix, self.matrix)
-        return self
+        # return self
 
     def negate(self):
-        self.matrix = -1 * self.matrix
+        self.matrix = self.matrix.negate()
         return self
 
     def equal(self, target):
-        return numpy.allclose(self.matrix.todense(), target.matrix.todense())
+        return self.matrix.equal(target.matrix)
 
     def scale(self, value: float):
-        self.matrix = value * self.matrix
+        self.matrix = self.matrix.scale(value)
         return self
 
 
 class Vector:
-    def __init__(self, elements: Union[list[int], int, coo_array]):
-        # if isinstance(elements, coo_array):
-        #     self.vector = elements
-        #     self.vector = elements.shape[0]
+    # def __init__(self, elements: Union[int, list, matrixInterface]):
+    # self.matrix = sparseMatrix(size, elements)
+    # self.matrix = denseMatrix(size, elements)
+
+    @property
+    def matrix(self) -> matrixInterface:
+        return self._matrix
+
+    @matrix.setter
+    def matrix(self, matrix: matrixInterface):
+        self._matrix = matrix
+        return
+
+    def __init__(self, elements: Union[list[int], int, matrixInterface]):
         if isinstance(elements, int):
             while elements not in [0, 1]:
                 raise Exception(
@@ -96,73 +102,112 @@ class Vector:
                     """
                 )
             if elements == 0:
-                elements = coo_array([1, 0])
+                elements = [1, 0]
             elif elements == 1:
-                elements = coo_array([0, 1])
+                elements = [0, 1]
 
         if isinstance(elements, list):
-            self.vector = coo_array(numpy.resize(elements, [len(elements), 1]))
-            self.dimension = self.vector.get_shape()[0]
+            # THIS IS LIKELY TO BUG!
+            self.vector = sparseMatrix(len(elements), elements, True)
+            self.dimension = self.vector.dimension()
             return
-        else:
-            self.length = elements.size
-            size = elements.get_shape()[0] * elements.get_shape()[1]
-            # print(elements.get_shape())
-            self.vector = elements.reshape(size, 1)
-            self.dimension = self.vector.get_shape()[0]
 
-    def tensor(self, target):
-        try:
-            # print(self.vector)
-            # print(target.vector)
-            product = scipy.sparse.kron(self.vector, target.vector)
+        if isinstance(elements, matrixInterface):
+            self.vector = elements.toVector()
+        # else:
+        #     self.length = elements.size
+        #     size = elements.get_shape()[0] * elements.get_shape()[1]
+        #     # print(elements.get_shape())
+        #     self.vector = elements.reshape(size, 1)
+        #     self.dimension = self.vector.get_shape()[0]
 
-            return Vector(product)
-        except:
+    def tensor(self, target: Vector):
+        self.vector = self.vector.tensor(target.vector)
+        return self
 
-            product = []
-            for i in self.vector:
-                for j in target.vector:
-                    product.append(i * j)
-            return Vector(product)
+    def scale(self, scalar: float):
+        self.vector = self.vector.scale(scalar)
+        return self
+        # try:
+        #     # print(self.vector)
+        #     # print(target.vector)
+        #     product = scipy.sparse.kron(self.vector, target.vector)
+        #
+        #     return Vector(product)
+        # except:
+        #
+        #     product = []
+        #     for i in self.vector:
+        #         for j in target.vector:
+        #             product.append(i * j)
+        #     return Vector(product)
 
-    def outer(self, target):
-        outer = numpy.outer(self.vector.transpose(), target.vector)
-        return Operator(self.vector.size, outer.tolist())
+    # def outer(self, target):
+    #     outer = numpy.outer(self.vector.transpose(), target.vector)
+    #     return Operator(self.vector.size, outer.tolist())
 
-    def __add__(self, other):
-        return Vector(numpy.add(self.vector, other.vector))
+    def __add__(self, other: Vector):
+        self.vector = self.vector + other.vector
+        return self
+        # return Vector(numpy.add(self.vector, other.vector))
 
     def __sub__(self, other):
+        self.vector = self.vector - other.vector
+        return self
         return Vector(numpy.subtract(self.vector, other.vector))
 
-    def __mul__(self, other):
-        return Vector((self.vector * other))
+    # def __mul__(self, other):
+    #     self.vector = self.vector * other.matrix
+    #     return self
+    # return Vector((self.vector * other))
 
-    __rmul__ = __mul__
+    #
+    # __rmul__ = __mul__
 
-    def __pow__(self, n):
-        i = 1
-        product = self
-        while i < n:
-            product = product.tensor(self)
-            i = i + 1
+    def __pow__(self, n: int):
+        self.vector = self.vector**n
+        return self
+        # i = 1
+        # product = self
+        # while i < n:
+        #     product = product.tensor(self)
+        #     i = i + 1
+        #
+        # return product
 
-        return product
-
-    def __repr__(self):
-        return self.vector.__rep__()
+    # def __repr__(self):
+    #     return self.vector.__rep__()
 
     def __str__(self):
-        return self.vector.todense().__str__()
+        return self.vector.__str__()
 
     def apply(self, operator: Operator):
-        # product = numpy.matmul(operator.matrix, self.vector)
-        product = operator.matrix.dot(coo_array(self.vector))
-        return Vector(product)
+        # self.vector = self.vector * operator.matrix
+        product = operator.matrix.multiply(self.vector)
 
-    def equal(self, target):
+        return Vector(product)
+        return self
+        # product = numpy.matmul(operator.matrix, self.vector)
+        # product = operator.matrix.dot(coo_array(self.vector))
+        # return Vector(product)
+
+    def equal(self, target: Vector):
+        return self.vector.equal(target.vector)
         return numpy.allclose(self.vector.todense(), target.vector.todense())
+
+    def measure(self, basis: Vector):
+        value = numpy.dot(
+            basis.vector.flat(),
+            self.vector.flat(),
+        )
+
+        return value
+        # numpy.dot(
+        #         makeStateVector(target, self.register_size)
+        #         .vector.todense()
+        #         .flatten(),
+        #         self.register.vector.todense().flatten(),
+        #     )
 
 
 #

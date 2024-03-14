@@ -6,11 +6,7 @@ This module tests the classes included in the tensor module.
 """
 
 import unittest
-import numpy
-from scipy.sparse import coo_array
 from gates import Gate
-from utils.gate import squareMatrix
-from math import sqrt
 from utils.state_vector import makeStateVector
 from utils.tensor import Operator, Vector
 
@@ -45,7 +41,7 @@ class TestVector(unittest.TestCase):
 
     def test_scalar_multiplication(self):
         vector = Vector([1, 2, 3])
-        double = vector * 2
+        double = vector.scale(2)
         print(double)
         self.assertTrue(double.equal(Vector([2, 4, 6])))
 
@@ -71,6 +67,9 @@ class TestOperator(unittest.TestCase):
     def test_operator_tensor_product(self):
         op1 = Operator(2, [0, 1, 1, 0])
         op2 = Operator(2, [1, 0, 0, 1])
+
+        product = op1.tensor(op2)
+        print(product)
 
         result = Operator(4, [0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0])
         self.assertTrue(op1.tensor(op2).equal(result))
@@ -171,6 +170,7 @@ class TestOperator(unittest.TestCase):
             1.0,
         ]
         scaledProduct = H.tensor(I).tensor(H)
+        print(scaledProduct)
         correctOperator = Operator(8, correct_list).scale(0.5)
 
         self.assertTrue(scaledProduct.equal(correctOperator))
@@ -179,7 +179,7 @@ class TestOperator(unittest.TestCase):
         gates = Gate(1)
         H = gates.h()
         product = H.tensor(H).tensor(H).tensor(H).tensor(H)
-        self.assertEqual(product.size, 32)
+        self.assertEqual(product.matrix.size, 32)
 
     def test_operator_tensor_vector(self):
 
@@ -194,7 +194,7 @@ class TestOperator(unittest.TestCase):
             + makeStateVector(1, 3)
             + makeStateVector(4, 3)
             + makeStateVector(5, 3)
-        ) * 0.5
+        ).scale(0.5)
 
         result = vector.apply(op)
 
