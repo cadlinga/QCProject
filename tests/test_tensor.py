@@ -189,6 +189,7 @@ class TestOperator(unittest.TestCase):
         op = h.tensor(i).tensor(h)
 
         vector = makeStateVector(0, 3)
+
         expected = (
             makeStateVector(0, 3)
             + makeStateVector(1, 3)
@@ -197,6 +198,8 @@ class TestOperator(unittest.TestCase):
         ).scale(0.5)
 
         result = vector.apply(op)
+
+        # self.assertTrue(False)
 
         self.assertTrue(result.equal(expected))
 

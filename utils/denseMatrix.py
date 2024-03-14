@@ -41,7 +41,7 @@ class denseMatrix(matrixInterface):
         self._matrix = matrix
         return
 
-    def tensor(self, other: matrixInterface) -> denseMatrix:
+    def tensor(self, other: denseMatrix) -> denseMatrix:
         product = []
 
         if self.vector or other.vector:
@@ -77,14 +77,14 @@ class denseMatrix(matrixInterface):
         self.matrix = -1 * self.matrix
         return self
 
-    def equal(self, other: matrixInterface) -> bool:
+    def equal(self, other: denseMatrix) -> bool:
         return allclose(self.matrix, other.matrix)
 
     def scale(self, factor: float) -> denseMatrix:
         self.matrix = factor * self.matrix
         return self
 
-    def multiply(self, other: matrixInterface) -> denseMatrix:
+    def multiply(self, other: denseMatrix) -> denseMatrix:
         product = matmul(self.matrix, other.matrix)
         return denseMatrix(self.size, product, other.vector)
 
@@ -108,7 +108,7 @@ class denseMatrix(matrixInterface):
         self.matrix = self.matrix.reshape(self.matrix.shape[0], 1)
         return self
 
-    def dimension(self) -> matrixInterface:
+    def dimension(self) -> int:
         return self.matrix.shape[0]
 
     def flat(self) -> ArrayLike:

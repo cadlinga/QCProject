@@ -46,7 +46,7 @@ class sparseMatrix(matrixInterface):
     def tensor(self, other: matrixInterface) -> sparseMatrix:
         product = kron(self.matrix, other.matrix)
         size = self.size * other.size
-        return sparseMatrix(size, product.todense().flatten().tolist(), self.vector)
+        return sparseMatrix(size, product, self.vector)
 
     def __str__(self):
         return self.matrix.todense().__str__()
@@ -74,9 +74,7 @@ class sparseMatrix(matrixInterface):
 
     def multiply(self, other: matrixInterface) -> sparseMatrix:
         product = self.matrix.dot(other.matrix)
-        return sparseMatrix(
-            self.size, product.todense().flatten().tolist(), other.vector
-        )
+        return sparseMatrix(1, product, other.vector)
 
     def power(self, exponent: int) -> sparseMatrix:
         initial = self
@@ -98,7 +96,7 @@ class sparseMatrix(matrixInterface):
         self.matrix = self.matrix.reshape(self.matrix.get_shape()[0], 1)
         return self
 
-    def dimension(self) -> matrixInterface:
+    def dimension(self) -> int:
         return self.matrix.get_shape()[0]
 
     def flat(self) -> ArrayLike:

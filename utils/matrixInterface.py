@@ -47,11 +47,6 @@ class matrixInterface(ABC):
     def power(self, exponent: int) -> matrixInterface:
         pass
 
-    # @abstractmethod
-    # def outer_product(self):
-
-    #     pass
-
     @abstractmethod
     def add(self, other: matrixInterface) -> matrixInterface:
         pass

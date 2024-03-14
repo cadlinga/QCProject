@@ -2,8 +2,10 @@ from __future__ import annotations
 from typing import Union
 import numpy
 
-# from utils.sparseMatrix import sparseMatrix as Matrix
-from utils.denseMatrix import denseMatrix as Matrix
+if "dense" == "dense":
+    from utils.denseMatrix import denseMatrix as Matrix
+else:
+    from utils.sparseMatrix import sparseMatrix as Matrix
 
 from utils.matrixInterface import matrixInterface
 
@@ -110,7 +112,6 @@ class Vector:
     def __add__(self, other: Vector):
         self.vector = self.vector + other.vector
         return self
-        # return Vector(numpy.add(self.vector, other.vector))
 
     def __sub__(self, other):
         self.vector = self.vector - other.vector

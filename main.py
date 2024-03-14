@@ -8,8 +8,8 @@ Grover's algorithm to find the target state, and measures the result.
 """
 
 import argparse
+
 from qc import Circuit
-from utils.tensor import Operator, Vector
 
 parser = argparse.ArgumentParser(description="Quantum Computer Simulator")
 
@@ -33,7 +33,8 @@ args = vars(parser.parse_args())
 
 register_size = args["Register Size"]
 target = args["Target State"]
-
+global sparsity
+sparsity = "sparse"
 print("Register Size: " + register_size)
 print("Target State: " + target)
 
@@ -64,7 +65,7 @@ r"""
 This loops over the grover cycle (oracle -> h -> reflect -> h)
 number of times specified.
 """
-circuit.grover(target, True)
+circuit.grover(target, False)
 
 
 r"""
