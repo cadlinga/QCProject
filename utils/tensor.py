@@ -15,15 +15,17 @@ vector and checking equality between vectors.
 """
 
 from __future__ import annotations
+from utils.matrixInterface import matrixInterface
 from typing import Union
 import numpy
 
-if "dense" == "dense":
+sparsity = "dense"  # "sparse" or "dense"
+
+
+if sparsity == "dense":
     from utils.denseMatrix import denseMatrix as Matrix
 else:
     from utils.sparseMatrix import sparseMatrix as Matrix
-
-from utils.matrixInterface import matrixInterface
 
 
 class Operator:
@@ -38,6 +40,7 @@ class Operator:
         matrix (coo_array): The sparse matrix representation of the operator.
         size (int): The size of the operator matrix.
     """
+
     def __init__(self, size: int, elements: Union[list, matrixInterface]):
         self.matrix = Matrix(size, elements)
 
@@ -178,7 +181,7 @@ class Operator:
 
         Returns:
             Operator: The scaled operator.
-        
+
         ----
         """
 
@@ -198,6 +201,7 @@ class Vector:
         vector (coo_array): The sparse vector representation.
         dimension (int): The dimension of the vector.
     """
+
     @property
     def matrix(self) -> matrixInterface:
         return self._matrix
@@ -335,10 +339,10 @@ class Vector:
 
         Returns:
             float: The measurement result.
-        
+
         ----
         """
-    
+
         value = numpy.dot(
             basis.vector.flat(),
             self.vector.flat(),

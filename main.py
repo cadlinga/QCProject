@@ -33,8 +33,7 @@ args = vars(parser.parse_args())
 
 register_size = args["Register Size"]
 target = args["Target State"]
-global sparsity
-sparsity = "sparse"
+
 print("Register Size: " + register_size)
 print("Target State: " + target)
 
@@ -65,7 +64,7 @@ r"""
 This loops over the grover cycle (oracle -> h -> reflect -> h)
 number of times specified.
 """
-circuit.grover(target, False)
+circuit.grover(target, True)
 
 
 r"""

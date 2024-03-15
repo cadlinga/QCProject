@@ -5,45 +5,165 @@
 \let\spxextra \sphinxstyleindexextra
 
   \bigletter A
+  \item \spxentry{add()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{add()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{add()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+  \item \spxentry{apply()}\spxextra{utils.tensor.Vector method}, \hyperpage{12}
   \item \spxentry{arg1}\spxextra{example.Example attribute}, \hyperpage{1}
 
   \indexspace
+  \bigletter C
+  \item \spxentry{Circuit}\spxextra{class in qc}, \hyperpage{3}
+
+  \indexspace
+  \bigletter D
+  \item \spxentry{denseMatrix}\spxextra{class in utils.denseMatrix}, \hyperpage{9}
+  \item \spxentry{dimension()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{dimension()}\spxextra{utils.matrixInterface.matrixInterface method}, 
+		\hyperpage{5}
+  \item \spxentry{dimension()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+
+  \indexspace
   \bigletter E
+  \item \spxentry{equal()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{equal()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{equal()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+  \item \spxentry{equal()}\spxextra{utils.tensor.Operator method}, \hyperpage{11}
+  \item \spxentry{equal()}\spxextra{utils.tensor.Vector method}, \hyperpage{12}
   \item \spxentry{example}
     \subitem \spxentry{module}, \hyperpage{1}
   \item \spxentry{Example}\spxextra{class in example}, \hyperpage{1}
   \item \spxentry{Example2}\spxextra{class in example}, \hyperpage{2}
 
   \indexspace
+  \bigletter F
+  \item \spxentry{flat()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{flat()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{flat()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+
+  \indexspace
   \bigletter G
-  \item \spxentry{Gate}\spxextra{class in gates}, \hyperpage{3}
+  \item \spxentry{Gate}\spxextra{class in gates}, \hyperpage{15}
   \item \spxentry{gates}
-    \subitem \spxentry{module}, \hyperpage{2}
+    \subitem \spxentry{module}, \hyperpage{13}
+  \item \spxentry{grover()}\spxextra{qc.Circuit method}, \hyperpage{3}
 
   \indexspace
   \bigletter H
-  \item \spxentry{h()}\spxextra{gates.Gate method}, \hyperpage{3}
+  \item \spxentry{h()}\spxextra{gates.Gate method}, \hyperpage{15}
+  \item \spxentry{h()}\spxextra{qc.Circuit method}, \hyperpage{3}
+
+  \indexspace
+  \bigletter I
+  \item \spxentry{i()}\spxextra{gates.Gate method}, \hyperpage{15}
 
   \indexspace
   \bigletter M
+  \item \spxentry{makeStateVector()}\spxextra{in module utils.state\_vector}, \hyperpage{3}
+  \item \spxentry{matrix}\spxextra{utils.denseMatrix.denseMatrix property}, \hyperpage{9}
+  \item \spxentry{matrix}\spxextra{utils.matrixInterface.matrixInterface property}, \hyperpage{5}
+  \item \spxentry{matrix}\spxextra{utils.sparseMatrix.sparseMatrix property}, \hyperpage{7}
+  \item \spxentry{matrixInterface}\spxextra{class in utils.matrixInterface}, \hyperpage{5}
+  \item \spxentry{measure()}\spxextra{qc.Circuit method}, \hyperpage{3}
+  \item \spxentry{measure()}\spxextra{utils.tensor.Vector method}, \hyperpage{12}
   \item \spxentry{module}
     \subitem \spxentry{example}, \hyperpage{1}
-    \subitem \spxentry{gates}, \hyperpage{2}
-    \subitem \spxentry{tests.test\_tensor}, \hyperpage{3}
+    \subitem \spxentry{gates}, \hyperpage{13}
+    \subitem \spxentry{qc}, \hyperpage{2}
+    \subitem \spxentry{tests.test\_tensor}, \hyperpage{16}
+    \subitem \spxentry{utils.denseMatrix}, \hyperpage{8}
+    \subitem \spxentry{utils.matrixInterface}, \hyperpage{3}
+    \subitem \spxentry{utils.sparseMatrix}, \hyperpage{6}
+    \subitem \spxentry{utils.state\_vector}, \hyperpage{3}
+    \subitem \spxentry{utils.tensor}, \hyperpage{10}
+  \item \spxentry{multiply()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{multiply()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{multiply()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+
+  \indexspace
+  \bigletter N
+  \item \spxentry{negate()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{negate()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{negate()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+  \item \spxentry{negate()}\spxextra{utils.tensor.Operator method}, \hyperpage{11}
+
+  \indexspace
+  \bigletter O
+  \item \spxentry{Operator}\spxextra{class in utils.tensor}, \hyperpage{11}
+  \item \spxentry{oracle()}\spxextra{gates.Gate method}, \hyperpage{15}
+
+  \indexspace
+  \bigletter P
+  \item \spxentry{power()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{power()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{power()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+
+  \indexspace
+  \bigletter Q
+  \item \spxentry{qc}
+    \subitem \spxentry{module}, \hyperpage{2}
+
+  \indexspace
+  \bigletter R
+  \item \spxentry{reflection()}\spxextra{gates.Gate method}, \hyperpage{16}
+  \item \spxentry{reshape()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{reshape()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{reshape()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+
+  \indexspace
+  \bigletter S
+  \item \spxentry{scale()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{scale()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{scale()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+  \item \spxentry{scale()}\spxextra{utils.tensor.Operator method}, \hyperpage{11}
+  \item \spxentry{scale()}\spxextra{utils.tensor.Vector method}, \hyperpage{12}
+  \item \spxentry{size}\spxextra{utils.denseMatrix.denseMatrix property}, \hyperpage{9}
+  \item \spxentry{size}\spxextra{utils.matrixInterface.matrixInterface property}, \hyperpage{5}
+  \item \spxentry{size}\spxextra{utils.sparseMatrix.sparseMatrix property}, \hyperpage{7}
+  \item \spxentry{sparseMatrix}\spxextra{class in utils.sparseMatrix}, \hyperpage{7}
+  \item \spxentry{subtract()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{subtract()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{subtract()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
 
   \indexspace
   \bigletter T
+  \item \spxentry{tensor()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{tensor()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{tensor()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
+  \item \spxentry{tensor()}\spxextra{utils.tensor.Operator method}, \hyperpage{11}
+  \item \spxentry{tensor()}\spxextra{utils.tensor.Vector method}, \hyperpage{13}
   \item \spxentry{test\_operator\_tensor\_product\_vs\_notes()}\spxextra{tests.test\_tensor.TestOperator method}, 
-		\hyperpage{5}
+		\hyperpage{17}
   \item \spxentry{test\_vector\_construction()}\spxextra{tests.test\_tensor.TestVector method}, 
-		\hyperpage{5}
-  \item \spxentry{TestOperator}\spxextra{class in tests.test\_tensor}, \hyperpage{5}
+		\hyperpage{17}
+  \item \spxentry{TestOperator}\spxextra{class in tests.test\_tensor}, \hyperpage{17}
   \item \spxentry{tests.test\_tensor}
-    \subitem \spxentry{module}, \hyperpage{3}
-  \item \spxentry{TestVector}\spxextra{class in tests.test\_tensor}, \hyperpage{5}
+    \subitem \spxentry{module}, \hyperpage{16}
+  \item \spxentry{TestVector}\spxextra{class in tests.test\_tensor}, \hyperpage{17}
+  \item \spxentry{toVector()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
+  \item \spxentry{toVector()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{6}
+  \item \spxentry{toVector()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
 
   \indexspace
   \bigletter U
+  \item \spxentry{update()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{10}
+  \item \spxentry{update()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{6}
+  \item \spxentry{update()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{8}
+  \item \spxentry{update()}\spxextra{utils.tensor.Operator method}, \hyperpage{12}
   \item \spxentry{usefulMethod()}\spxextra{example.Example method}, \hyperpage{1}
+  \item \spxentry{utils.denseMatrix}
+    \subitem \spxentry{module}, \hyperpage{8}
+  \item \spxentry{utils.matrixInterface}
+    \subitem \spxentry{module}, \hyperpage{3}
+  \item \spxentry{utils.sparseMatrix}
+    \subitem \spxentry{module}, \hyperpage{6}
+  \item \spxentry{utils.state\_vector}
+    \subitem \spxentry{module}, \hyperpage{3}
+  \item \spxentry{utils.tensor}
+    \subitem \spxentry{module}, \hyperpage{10}
+
+  \indexspace
+  \bigletter V
+  \item \spxentry{Vector}\spxextra{class in utils.tensor}, \hyperpage{12}
 
 \end{sphinxtheindex}

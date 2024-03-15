@@ -1,3 +1,8 @@
+r"""
+Sparse Matrix Implementation
+=============================
+"""
+
 from __future__ import annotations
 from typing import Union
 
@@ -30,7 +35,6 @@ class sparseMatrix(matrixInterface):
 
     @matrix.setter
     def matrix(self, elements):
-
         if isinstance(elements, list):
             if self.vector:
                 matrix = coo_array(array(elements).reshape(len(elements), 1))

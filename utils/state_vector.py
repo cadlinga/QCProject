@@ -1,5 +1,20 @@
 from utils.tensor import Vector
 
+"""
+CANNOT GET SPHINX TO INCLUDE THESE - POSSIBLY BECAUSE ITS NOT A CLASS?
+NOT A PRIORITY
+"""
+"""
+Args:
+    value (int): The integer value to create the state vector from.
+    size (int): The desired size of the state vector. If not provided, the size is
+                determined by the length of the binary representation of `value`.
+
+Returns:
+    Vector: The state vector created as a tensor product of individual qubit state vectors.
+
+"""
+
 
 def makeStateVector(value: int, size: int = 0):
     r"""
@@ -12,13 +27,6 @@ def makeStateVector(value: int, size: int = 0):
     If the `size` parameter is not provided, the size of the state vector is determined
     by the length of the binary representation of the `value`.
 
-    Args:
-        value (int): The integer value to create the state vector from.
-        size (int): The desired size of the state vector. If not provided, the size is
-                    determined by the length of the binary representation of `value`.
-
-    Returns:
-        Vector: The state vector created as a tensor product of individual qubit state vectors.
     """
 
     length = len(f"{value: b}")

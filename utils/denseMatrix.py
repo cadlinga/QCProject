@@ -1,3 +1,8 @@
+r"""
+Dense Matrix Implementation
+=============================
+"""
+
 from __future__ import annotations
 from typing import Union
 

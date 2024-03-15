@@ -13,6 +13,7 @@ from gates import Gate
 from utils.state_vector import makeStateVector
 
 import matplotlib.pyplot as plt
+from utils.tensor import sparsity
 
 
 class Circuit:
@@ -166,7 +167,7 @@ class Circuit:
 
         Params:
             target (int): The target state to measure the probability for.
-        
+
         ----
         """
         target_state = makeStateVector(int(target), self.register_size)

@@ -18,7 +18,20 @@ Welcome to QC Project's documentation!
 .. ---------------------------------------
 
 
-
+.. .. automodule:: main
+..      :members:
+.. automodule:: qc
+     :members:
+.. automodule:: utils.state_vector 
+     :members:
+.. automodule:: utils.matrixInterface 
+     :members:
+.. automodule:: utils.sparseMatrix 
+     :members:
+.. automodule:: utils.denseMatrix 
+     :members:
+.. automodule:: utils.tensor
+     :members:
 .. automodule:: gates
      :members:
 .. automodule:: tests.test_tensor
