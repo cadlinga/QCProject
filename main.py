@@ -19,6 +19,9 @@ The 'Register Size' argument specifies the number of qubits in the quantum regis
 parser.add_argument(
     "Register Size",
     help="Please enter an integer for the size of the register",
+    nargs="?",
+    const=6,
+    default="6",
 )
 
 r"""
@@ -27,12 +30,21 @@ The 'Target State' argument represents the state that Grover's algorithm should 
 parser.add_argument(
     "Target State",
     help="The state you want Grovers algorithm to find, zero based indexing",
+    nargs="?",
+    const=1,
+    default="1",
 )
 
+
+# Uncomment this block to enable the arguments
 args = vars(parser.parse_args())
 
 register_size = args["Register Size"]
 target = args["Target State"]
+#
+# print("This is currently not taking inputs so the documentation can be generated")
+# register_size = "5"
+# target = "1"
 
 print("Register Size: " + register_size)
 print("Target State: " + target)

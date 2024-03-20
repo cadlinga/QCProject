@@ -1,4 +1,4 @@
-r"""
+"""
 Tensor Module Test Suite
 ##############################
 
@@ -12,7 +12,7 @@ from utils.tensor import Operator, Vector
 
 
 class TestVector(unittest.TestCase):
-    """
+    r"""
     This class aims to provide end to end testing of the
     Vector class within the tensor module.
 
@@ -22,9 +22,9 @@ class TestVector(unittest.TestCase):
 
     def test_vector_construction(self):
         """
-        This test aims to check...
+        This test checks that the `Vector` is correctly constructed
+        when the `init` method is called.
         """
-
         elements = [1, 0, 1]
         vector = Vector(elements)
         self.assertEqual(vector.dimension, 3)
@@ -40,6 +40,10 @@ class TestVector(unittest.TestCase):
     #     self.assertEqual(third, 1)
 
     def test_scalar_multiplication(self):
+        r"""
+        This test checks the scalar multiplication method behaves
+        as expected.
+        """
         vector = Vector([1, 2, 3])
         double = vector.scale(2)
         print(double)
@@ -49,6 +53,10 @@ class TestVector(unittest.TestCase):
         # double.vector, Vector([2, 4, 6]).vector))
 
     def test_vector_tensor_product(self):
+        r"""
+        This test checks that the tensor product of two `Vector` is computed
+        correctly.
+        """
         v1 = Vector([1, 0, 1])
         v2 = Vector([1, 1, 1])
         v3 = Vector([1, 1, 1, 0, 0, 0, 1, 1, 1])
@@ -63,8 +71,19 @@ class TestVector(unittest.TestCase):
 
 
 class TestOperator(unittest.TestCase):
+    r"""
+    This class aims to provide end to end testing of the
+    Operator class within the tensor module.
+
+    The purpose of each test and the method by which it
+    is validated is outlined below.
+    """
 
     def test_operator_tensor_product(self):
+        r"""
+        This test checks that the tensor product of two operators
+        is computed correctly.
+        """
         op1 = Operator(2, [0, 1, 1, 0])
         op2 = Operator(2, [1, 0, 0, 1])
 
@@ -176,13 +195,21 @@ class TestOperator(unittest.TestCase):
         self.assertTrue(scaledProduct.equal(correctOperator))
 
     def test_product_of_H_gates(self):
+        """
+        This test confirms that raising a Hadamard gate to a power
+        correctly computes the tensor product and provides the
+        correct dimension of `Operator`.
+        """
         gates = Gate(1)
         H = gates.h()
         product = H.tensor(H).tensor(H).tensor(H).tensor(H)
         self.assertEqual(product.matrix.size, 32)
 
-    def test_operator_tensor_vector(self):
-
+    def test_operator_applied_to_vector(self):
+        """
+        This test confirms that `Operator`s are correctly applied
+        to `Vector`s when the `apply()` method is used.
+        """
         gates = Gate(1)
         h = gates.h()
         i = gates.i()
@@ -204,6 +231,10 @@ class TestOperator(unittest.TestCase):
         self.assertTrue(result.equal(expected))
 
     def test_update(self):
+        r"""
+        This test confirms that when the update method is used on an `Operator`
+        the correct element is updated to the correct value.
+        """
         op = Gate(2).i()
         op.update(0, 0, -1)
         target = Operator(4, [-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1])

@@ -27,8 +27,8 @@
 \indexentry{reshape() (utils.matrixInterface.matrixInterface method)@\spxentry{reshape()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{5}
 \indexentry{scale() (utils.matrixInterface.matrixInterface method)@\spxentry{scale()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{5}
 \indexentry{size (utils.matrixInterface.matrixInterface property)@\spxentry{size}\spxextra{utils.matrixInterface.matrixInterface property}|hyperpage}{5}
-\indexentry{subtract() (utils.matrixInterface.matrixInterface method)@\spxentry{subtract()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{5}
-\indexentry{tensor() (utils.matrixInterface.matrixInterface method)@\spxentry{tensor()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{5}
+\indexentry{subtract() (utils.matrixInterface.matrixInterface method)@\spxentry{subtract()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{6}
+\indexentry{tensor() (utils.matrixInterface.matrixInterface method)@\spxentry{tensor()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{6}
 \indexentry{toVector() (utils.matrixInterface.matrixInterface method)@\spxentry{toVector()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{6}
 \indexentry{update() (utils.matrixInterface.matrixInterface method)@\spxentry{update()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{6}
 \indexentry{module@\spxentry{module}!utils.sparseMatrix@\spxentry{utils.sparseMatrix}|hyperpage}{6}

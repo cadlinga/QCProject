@@ -93,7 +93,6 @@ class Circuit:
                 + " iterations"
             )
             # Manually adjust these to find the best axis
-            plt.xlim((-0.005, 0.05))
             plt.ylim((-0.1, 1))
             plt.axis("off")
 
@@ -129,6 +128,7 @@ class Circuit:
             * self.gates.h() ** int(self.register_size)
         )
 
+        x = []
         while i < int(iterations):
             self.register = self.register.apply(G)
 
@@ -137,6 +137,7 @@ class Circuit:
             if plot:
                 target_projection = self.register.measure(target_state)
                 initial_projection = self.register.measure(self.initial)
+                x.append(initial_projection)
                 plt.quiver(
                     [initial_projection, 0, initial_projection],
                     [target_projection, 0, target_projection],
@@ -149,6 +150,8 @@ class Circuit:
 
         if plot:
             plt.legend()
+            plt.xlim(min(x) - 0.01, 1.2 * max(x))
+            plt.xticks(x)
             plt.savefig(
                 str(self.register_size) + "qubits_" +
                 str(iterations) + "iterations",

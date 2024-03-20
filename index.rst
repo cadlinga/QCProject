@@ -13,8 +13,8 @@ Welcome to QC Project's documentation!
 
 
 .. This will be removed before publishing 
-.. automodule:: example 
-     :members:
+.. .. automodule:: example 
+..      :members:
 .. ---------------------------------------
 
 
@@ -24,16 +24,18 @@ Welcome to QC Project's documentation!
      :members:
 .. automodule:: utils.state_vector 
      :members:
-.. automodule:: utils.matrixInterface 
-     :members:
-.. automodule:: utils.sparseMatrix 
-     :members:
-.. automodule:: utils.denseMatrix 
-     :members:
+
 .. automodule:: utils.tensor
      :members:
 .. automodule:: gates
      :members:
 .. automodule:: tests.test_tensor
      :members:
+.. automodule:: utils.matrixInterface 
+     :members:
+.. automodule:: utils.sparseMatrix 
+     :members:
+.. automodule:: utils.denseMatrix 
+     :members:
+
 

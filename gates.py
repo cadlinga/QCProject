@@ -5,10 +5,6 @@ This module provides the implementation of quantum gates used in Grover's algori
 The `Gate` class contains methods for creating the Hadamard gate, oracle gate,
 reflection gate, and identity gate.
 
-.. note::
-   This code is still under development and until the version
-   is incremented to a 1.* you should not trust any of this
-   documentation.
 """
 
 from math import sqrt
@@ -67,7 +63,7 @@ class Gate(object):
         diagonal matrix with all elements on the diagonal equal to 1, except for
         the element corresponding to the target state, which is -1.
 
-        **Matrix Representation:**
+        **Matrix Representation when targeting the second state:**
 
         .. math::
 
@@ -78,13 +74,11 @@ class Gate(object):
                 \end{pmatrix}
 
         Params:
-            target (int): The target state to be marked by the oracle.
+            target (int): The target state to be marked by the oracle in little endian convention.
 
         Returns:
             Operator: The oracle gate as an `Operator` object.
 
-        .. warning::
-            unsure of this gate description, maybe worth to check others as well
         """
         target = int(target)
         return (Operator(2, [1, 0, 0, 1]) ** self.dimension).update(target, target, -1)
@@ -93,8 +87,9 @@ class Gate(object):
         r"""
         Reflection gate for Grover's algorithm.
 
-        The reflection gate reflects the amplitudes of all states about the average
-        amplitude. It is a diagonal matrix with the first element on the diagonal
+        The reflection gate reflects the quantum register in the direction 
+        of the initial state. 
+        It is a diagonal matrix with the first element on the diagonal
         equal to 1 and all other elements equal to -1.
 
         **Matrix Representation:**
@@ -132,10 +127,11 @@ class Gate(object):
 
         Returns:
             Operator: The identity gate as an `Operator` object.
-        
+
         ----
         """
         return Operator(2, [1, 0, 0, 1]) ** self.dimension
+
 
 #
 # class H(Gate):
@@ -168,4 +164,3 @@ class Gate(object):
 #             ),
 #         ).tolist()
 #         super().__init__(matrix)
-    

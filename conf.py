@@ -10,12 +10,12 @@ sys.path.insert(0, os.path.abspath("./"))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Quantum Computing Project"
+project = "Quantum Computing Project Code Documentation"
 copyright = "2024, Group 5"
 author = """
-Conner Adlington, Julia Bauer, etc. 
+Group 5
 """
-release = "0.01"
+release = "1.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

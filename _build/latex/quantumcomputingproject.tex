@@ -64,10 +64,10 @@
 
 
 \title{Quantum Computing Project}
-\date{Mar 15, 2024}
-\release{0.01}
+\date{Mar 18, 2024}
+\release{1.0}
 \author{
-Conner Adlington, Julia Bauer, etc.\@{} 
+Group 5
 }
 \newcommand{\sphinxlogo}{\vbox{}}
 \renewcommand{\releasename}{Release}
@@ -340,7 +340,15 @@ by the length of the binary representation of the \sphinxtitleref{value}.
 \index{module@\spxentry{module}!utils.matrixInterface@\spxentry{utils.matrixInterface}}\index{utils.matrixInterface@\spxentry{utils.matrixInterface}!module@\spxentry{module}}
 
 \chapter{Matrix Interface}
-\label{\detokenize{index:matrix-interface}}\label{\detokenize{index:module-utils.matrixInterface}}\index{matrixInterface (class in utils.matrixInterface)@\spxentry{matrixInterface}\spxextra{class in utils.matrixInterface}}
+\label{\detokenize{index:matrix-interface}}\label{\detokenize{index:module-utils.matrixInterface}}
+\sphinxAtStartPar
+The matrix interface relies on the pipeline pattern whereby, with few exceptions, the methods
+should all return an object of the matrixInterface. This allows for methods to be chained 
+for more readable code.
+
+\sphinxAtStartPar
+The parent class and available methods are described.
+\index{matrixInterface (class in utils.matrixInterface)@\spxentry{matrixInterface}\spxextra{class in utils.matrixInterface}}
 
 \begin{fulllineitems}
 \phantomsection\label{\detokenize{index:utils.matrixInterface.matrixInterface}}

@@ -1,0 +1,96 @@
+\indexentry{module@\spxentry{module}!qc@\spxentry{qc}|hyperpage}{1}
+\indexentry{qc@\spxentry{qc}!module@\spxentry{module}|hyperpage}{1}
+\indexentry{Circuit (class in qc)@\spxentry{Circuit}\spxextra{class in qc}|hyperpage}{1}
+\indexentry{grover() (qc.Circuit method)@\spxentry{grover()}\spxextra{qc.Circuit method}|hyperpage}{1}
+\indexentry{h() (qc.Circuit method)@\spxentry{h()}\spxextra{qc.Circuit method}|hyperpage}{1}
+\indexentry{measure() (qc.Circuit method)@\spxentry{measure()}\spxextra{qc.Circuit method}|hyperpage}{1}
+\indexentry{module@\spxentry{module}!utils.state\_vector@\spxentry{utils.state\_vector}|hyperpage}{1}
+\indexentry{utils.state\_vector@\spxentry{utils.state\_vector}!module@\spxentry{module}|hyperpage}{1}
+\indexentry{makeStateVector() (in module utils.state\_vector)@\spxentry{makeStateVector()}\spxextra{in module utils.state\_vector}|hyperpage}{1}
+\indexentry{module@\spxentry{module}!utils.tensor@\spxentry{utils.tensor}|hyperpage}{1}
+\indexentry{utils.tensor@\spxentry{utils.tensor}!module@\spxentry{module}|hyperpage}{1}
+\indexentry{Operator (class in utils.tensor)@\spxentry{Operator}\spxextra{class in utils.tensor}|hyperpage}{3}
+\indexentry{equal() (utils.tensor.Operator method)@\spxentry{equal()}\spxextra{utils.tensor.Operator method}|hyperpage}{3}
+\indexentry{negate() (utils.tensor.Operator method)@\spxentry{negate()}\spxextra{utils.tensor.Operator method}|hyperpage}{3}
+\indexentry{scale() (utils.tensor.Operator method)@\spxentry{scale()}\spxextra{utils.tensor.Operator method}|hyperpage}{3}
+\indexentry{tensor() (utils.tensor.Operator method)@\spxentry{tensor()}\spxextra{utils.tensor.Operator method}|hyperpage}{3}
+\indexentry{update() (utils.tensor.Operator method)@\spxentry{update()}\spxextra{utils.tensor.Operator method}|hyperpage}{4}
+\indexentry{Vector (class in utils.tensor)@\spxentry{Vector}\spxextra{class in utils.tensor}|hyperpage}{4}
+\indexentry{apply() (utils.tensor.Vector method)@\spxentry{apply()}\spxextra{utils.tensor.Vector method}|hyperpage}{4}
+\indexentry{equal() (utils.tensor.Vector method)@\spxentry{equal()}\spxextra{utils.tensor.Vector method}|hyperpage}{4}
+\indexentry{measure() (utils.tensor.Vector method)@\spxentry{measure()}\spxextra{utils.tensor.Vector method}|hyperpage}{4}
+\indexentry{scale() (utils.tensor.Vector method)@\spxentry{scale()}\spxextra{utils.tensor.Vector method}|hyperpage}{4}
+\indexentry{tensor() (utils.tensor.Vector method)@\spxentry{tensor()}\spxextra{utils.tensor.Vector method}|hyperpage}{4}
+\indexentry{module@\spxentry{module}!gates@\spxentry{gates}|hyperpage}{5}
+\indexentry{gates@\spxentry{gates}!module@\spxentry{module}|hyperpage}{5}
+\indexentry{Gate (class in gates)@\spxentry{Gate}\spxextra{class in gates}|hyperpage}{7}
+\indexentry{h() (gates.Gate method)@\spxentry{h()}\spxextra{gates.Gate method}|hyperpage}{7}
+\indexentry{i() (gates.Gate method)@\spxentry{i()}\spxextra{gates.Gate method}|hyperpage}{7}
+\indexentry{oracle() (gates.Gate method)@\spxentry{oracle()}\spxextra{gates.Gate method}|hyperpage}{7}
+\indexentry{reflection() (gates.Gate method)@\spxentry{reflection()}\spxextra{gates.Gate method}|hyperpage}{8}
+\indexentry{module@\spxentry{module}!tests.test\_tensor@\spxentry{tests.test\_tensor}|hyperpage}{8}
+\indexentry{tests.test\_tensor@\spxentry{tests.test\_tensor}!module@\spxentry{module}|hyperpage}{8}
+\indexentry{TestOperator (class in tests.test\_tensor)@\spxentry{TestOperator}\spxextra{class in tests.test\_tensor}|hyperpage}{9}
+\indexentry{test\_operator\_applied\_to\_vector() (tests.test\_tensor.TestOperator method)@\spxentry{test\_operator\_applied\_to\_vector()}\spxextra{tests.test\_tensor.TestOperator method}|hyperpage}{9}
+\indexentry{test\_operator\_tensor\_product() (tests.test\_tensor.TestOperator method)@\spxentry{test\_operator\_tensor\_product()}\spxextra{tests.test\_tensor.TestOperator method}|hyperpage}{9}
+\indexentry{test\_operator\_tensor\_product\_vs\_notes() (tests.test\_tensor.TestOperator method)@\spxentry{test\_operator\_tensor\_product\_vs\_notes()}\spxextra{tests.test\_tensor.TestOperator method}|hyperpage}{9}
+\indexentry{test\_product\_of\_H\_gates() (tests.test\_tensor.TestOperator method)@\spxentry{test\_product\_of\_H\_gates()}\spxextra{tests.test\_tensor.TestOperator method}|hyperpage}{9}
+\indexentry{test\_update() (tests.test\_tensor.TestOperator method)@\spxentry{test\_update()}\spxextra{tests.test\_tensor.TestOperator method}|hyperpage}{9}
+\indexentry{TestVector (class in tests.test\_tensor)@\spxentry{TestVector}\spxextra{class in tests.test\_tensor}|hyperpage}{9}
+\indexentry{test\_scalar\_multiplication() (tests.test\_tensor.TestVector method)@\spxentry{test\_scalar\_multiplication()}\spxextra{tests.test\_tensor.TestVector method}|hyperpage}{9}
+\indexentry{test\_vector\_construction() (tests.test\_tensor.TestVector method)@\spxentry{test\_vector\_construction()}\spxextra{tests.test\_tensor.TestVector method}|hyperpage}{9}
+\indexentry{test\_vector\_tensor\_product() (tests.test\_tensor.TestVector method)@\spxentry{test\_vector\_tensor\_product()}\spxextra{tests.test\_tensor.TestVector method}|hyperpage}{10}
+\indexentry{module@\spxentry{module}!utils.matrixInterface@\spxentry{utils.matrixInterface}|hyperpage}{10}
+\indexentry{utils.matrixInterface@\spxentry{utils.matrixInterface}!module@\spxentry{module}|hyperpage}{10}
+\indexentry{matrixInterface (class in utils.matrixInterface)@\spxentry{matrixInterface}\spxextra{class in utils.matrixInterface}|hyperpage}{11}
+\indexentry{add() (utils.matrixInterface.matrixInterface method)@\spxentry{add()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{11}
+\indexentry{dimension() (utils.matrixInterface.matrixInterface method)@\spxentry{dimension()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{11}
+\indexentry{equal() (utils.matrixInterface.matrixInterface method)@\spxentry{equal()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{11}
+\indexentry{flat() (utils.matrixInterface.matrixInterface method)@\spxentry{flat()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{11}
+\indexentry{matrix (utils.matrixInterface.matrixInterface property)@\spxentry{matrix}\spxextra{utils.matrixInterface.matrixInterface property}|hyperpage}{11}
+\indexentry{multiply() (utils.matrixInterface.matrixInterface method)@\spxentry{multiply()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{11}
+\indexentry{negate() (utils.matrixInterface.matrixInterface method)@\spxentry{negate()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{11}
+\indexentry{power() (utils.matrixInterface.matrixInterface method)@\spxentry{power()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{11}
+\indexentry{reshape() (utils.matrixInterface.matrixInterface method)@\spxentry{reshape()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{11}
+\indexentry{scale() (utils.matrixInterface.matrixInterface method)@\spxentry{scale()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{11}
+\indexentry{size (utils.matrixInterface.matrixInterface property)@\spxentry{size}\spxextra{utils.matrixInterface.matrixInterface property}|hyperpage}{11}
+\indexentry{subtract() (utils.matrixInterface.matrixInterface method)@\spxentry{subtract()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{12}
+\indexentry{tensor() (utils.matrixInterface.matrixInterface method)@\spxentry{tensor()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{12}
+\indexentry{toVector() (utils.matrixInterface.matrixInterface method)@\spxentry{toVector()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{12}
+\indexentry{update() (utils.matrixInterface.matrixInterface method)@\spxentry{update()}\spxextra{utils.matrixInterface.matrixInterface method}|hyperpage}{12}
+\indexentry{module@\spxentry{module}!utils.sparseMatrix@\spxentry{utils.sparseMatrix}|hyperpage}{12}
+\indexentry{utils.sparseMatrix@\spxentry{utils.sparseMatrix}!module@\spxentry{module}|hyperpage}{12}
+\indexentry{sparseMatrix (class in utils.sparseMatrix)@\spxentry{sparseMatrix}\spxextra{class in utils.sparseMatrix}|hyperpage}{13}
+\indexentry{add() (utils.sparseMatrix.sparseMatrix method)@\spxentry{add()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{dimension() (utils.sparseMatrix.sparseMatrix method)@\spxentry{dimension()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{equal() (utils.sparseMatrix.sparseMatrix method)@\spxentry{equal()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{flat() (utils.sparseMatrix.sparseMatrix method)@\spxentry{flat()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{matrix (utils.sparseMatrix.sparseMatrix property)@\spxentry{matrix}\spxextra{utils.sparseMatrix.sparseMatrix property}|hyperpage}{13}
+\indexentry{multiply() (utils.sparseMatrix.sparseMatrix method)@\spxentry{multiply()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{negate() (utils.sparseMatrix.sparseMatrix method)@\spxentry{negate()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{power() (utils.sparseMatrix.sparseMatrix method)@\spxentry{power()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{reshape() (utils.sparseMatrix.sparseMatrix method)@\spxentry{reshape()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{scale() (utils.sparseMatrix.sparseMatrix method)@\spxentry{scale()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{size (utils.sparseMatrix.sparseMatrix property)@\spxentry{size}\spxextra{utils.sparseMatrix.sparseMatrix property}|hyperpage}{13}
+\indexentry{subtract() (utils.sparseMatrix.sparseMatrix method)@\spxentry{subtract()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{tensor() (utils.sparseMatrix.sparseMatrix method)@\spxentry{tensor()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{toVector() (utils.sparseMatrix.sparseMatrix method)@\spxentry{toVector()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{13}
+\indexentry{update() (utils.sparseMatrix.sparseMatrix method)@\spxentry{update()}\spxextra{utils.sparseMatrix.sparseMatrix method}|hyperpage}{14}
+\indexentry{module@\spxentry{module}!utils.denseMatrix@\spxentry{utils.denseMatrix}|hyperpage}{14}
+\indexentry{utils.denseMatrix@\spxentry{utils.denseMatrix}!module@\spxentry{module}|hyperpage}{14}
+\indexentry{denseMatrix (class in utils.denseMatrix)@\spxentry{denseMatrix}\spxextra{class in utils.denseMatrix}|hyperpage}{15}
+\indexentry{add() (utils.denseMatrix.denseMatrix method)@\spxentry{add()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{dimension() (utils.denseMatrix.denseMatrix method)@\spxentry{dimension()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{equal() (utils.denseMatrix.denseMatrix method)@\spxentry{equal()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{flat() (utils.denseMatrix.denseMatrix method)@\spxentry{flat()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{matrix (utils.denseMatrix.denseMatrix property)@\spxentry{matrix}\spxextra{utils.denseMatrix.denseMatrix property}|hyperpage}{15}
+\indexentry{multiply() (utils.denseMatrix.denseMatrix method)@\spxentry{multiply()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{negate() (utils.denseMatrix.denseMatrix method)@\spxentry{negate()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{power() (utils.denseMatrix.denseMatrix method)@\spxentry{power()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{reshape() (utils.denseMatrix.denseMatrix method)@\spxentry{reshape()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{scale() (utils.denseMatrix.denseMatrix method)@\spxentry{scale()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{size (utils.denseMatrix.denseMatrix property)@\spxentry{size}\spxextra{utils.denseMatrix.denseMatrix property}|hyperpage}{15}
+\indexentry{subtract() (utils.denseMatrix.denseMatrix method)@\spxentry{subtract()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{tensor() (utils.denseMatrix.denseMatrix method)@\spxentry{tensor()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{toVector() (utils.denseMatrix.denseMatrix method)@\spxentry{toVector()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{15}
+\indexentry{update() (utils.denseMatrix.denseMatrix method)@\spxentry{update()}\spxextra{utils.denseMatrix.denseMatrix method}|hyperpage}{16}

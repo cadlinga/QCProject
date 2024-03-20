@@ -122,13 +122,13 @@
   \item \spxentry{size}\spxextra{utils.sparseMatrix.sparseMatrix property}, \hyperpage{7}
   \item \spxentry{sparseMatrix}\spxextra{class in utils.sparseMatrix}, \hyperpage{7}
   \item \spxentry{subtract()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
-  \item \spxentry{subtract()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{subtract()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{6}
   \item \spxentry{subtract()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
 
   \indexspace
   \bigletter T
   \item \spxentry{tensor()}\spxextra{utils.denseMatrix.denseMatrix method}, \hyperpage{9}
-  \item \spxentry{tensor()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{5}
+  \item \spxentry{tensor()}\spxextra{utils.matrixInterface.matrixInterface method}, \hyperpage{6}
   \item \spxentry{tensor()}\spxextra{utils.sparseMatrix.sparseMatrix method}, \hyperpage{7}
   \item \spxentry{tensor()}\spxextra{utils.tensor.Operator method}, \hyperpage{11}
   \item \spxentry{tensor()}\spxextra{utils.tensor.Vector method}, \hyperpage{13}

@@ -9,9 +9,12 @@ The `Operator` class supports operations tensor products, addition, subtraction,
 exponentiation, and matrix multiplication. It also provides methods for updating matrix elements,
 negating the matrix, and scaling the matrix by a value.
 
-The `Vector` class supports operations tensor products, outer products, addition, subtraction,
+The `Vector` class supports operations tensor products,  addition, subtraction,
 scalar multiplication, and exponentiation. It also provides methods for applying an operator to a
 vector and checking equality between vectors.
+
+This is all achieved abstractly through the implementation of a `Matrix` property of each 
+object. See `matrixInterface` for more details on available methods. 
 """
 
 from __future__ import annotations
@@ -32,13 +35,7 @@ class Operator:
     r"""
     This class represents a quantum operator as a sparse matrix.
 
-    Args:
-        size (int): The size of the operator matrix.
-        elements (Union[list, coo_array]): The matrix elements as a list or a `coo_array`.
-
-    Attributes:
-        matrix (coo_array): The sparse matrix representation of the operator.
-        size (int): The size of the operator matrix.
+    It may take a list or `matrixInterface` in the constructor.
     """
 
     def __init__(self, size: int, elements: Union[list, matrixInterface]):
@@ -193,13 +190,8 @@ class Vector:
     r"""
     This class represents a quantum state vector.
 
-    Args:
-        elements (Union[list[int], int, coo_array]): The vector elements as a list, an integer (0 or 1),
-                                                     or a `coo_array`.
-
-    Attributes:
-        vector (coo_array): The sparse vector representation.
-        dimension (int): The dimension of the vector.
+    It may take the integer 1 or 0 to create a single qubit in the given state,
+    a list or `matrixInterface` in the constructor.
     """
 
     @property
